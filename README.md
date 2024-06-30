@@ -1,51 +1,61 @@
 # Orders App Exercise
 
-## Getting Started
+### Prerequisites:
 
-Prerequisites:
+  - node version v21.5.0 (recommended)
 
-- Node v18 (recommended), v10 and higher versions should also work.
-- Yarn (v1 by default, v2 may work but is un-tested).
-- **Note:** You can switch to npm if you want - just generate a lockfile and remove the Yarn one
+1. Clone the repository:
 
-Install and start:
+```bash
+git clone https://github.com/tchan70/tf-stage-Toby
+```
 
-- `yarn`
-- `yarn start`
-- Begin your implementation
+2. Navigate into the project directory:
 
-## Exercise
+```bash
+cd tf-stage-Toby
+```
 
-Using TypeScript and React, create a small web application that displays orders. It should look something like this:
+3. Install dependencies:
 
-![Mockup](mockup.jpg)
+```bash 
+npm install
+```
 
-Requirements:
+4. Start the development server:
 
-- On the home page, a button should be displayed that takes me to /orders (nothing else on home page)
-- All orders should be displayed by default on /orders
-- Users can filter by Accepted/In Progress/Complete orders (one at a time)
-- When on the orders page, the document's title (i.e. the text of the browser tab name) should contain a number that matches the number of orders currently being displayed (e.g. "(12) My Orders")
-- The number of currently visible orders should also be displayed within the page
-- Users can jump between Accepted/In Progress/Complete directly
-- When users have an order filter on, it should be displayed at the top of the list, with an "X" button/icon which is used to dismiss the current filter
+```bash
+npm start
+```
+  
+## Rationale for unit tests
 
-Please note:
+### Home Page Navigation:
 
-- This project was created with Create React App (with TypeScript support added). You are free to add any tooling at your discretion, if you think it will help you. If you find an issue that is preventing you from doing the task, please contact Steve
-- You should consume the order data directly as raw JSON. This is a purely client-side exercise.
-- You are not being marked on the visual output. `antd` is included out of the box - it is recommend to use standard antd components. You may wish to write a small amount of CSS for the basic page layout.
-- It's expected that the exercise will take 30-60 minutes
+  __Unit Test__: Confirm that the homepage button navigates to the /orders page correctly.
+  - Rationale: This ensures that the primary navigation from the home page to the orders page works as expected.
 
-## Bonus
+### Display Order Count:
 
-For bonus points, provide a written rationale (or implementation if you wish) for how you would cover your work with unit tests. Please note this is **not expected** as we wish to respect candidates' time. This can also be discussed at the following interview.
+  __Unit Test__: Count the number of orders displayed initially without any filters applied.
+  - Rationale: Verifies that all orders are shown by default and the initial state of the orders page is correct.
 
-## Submission
+### Document Title Update:
 
-Please send your solution as a .zip to Steve (stevenjchapman@gmail.com). Please don't include node_modules.
-Alternatively, you can share a link to your repo. **Note:** please create a repo from scratch rather than forking the solution where possible.
+  __Unit Test__: Verify that the number of orders displayed matches the number shown in the document title.
+  - Rationale: Ensures that the document title correctly reflects the number of visible orders, providing a good user experience.
 
-## Feedback
+### Filter Orders by Status:
 
-For any clarifications or feedback on this exercise, please contact Steve (stevenjchapman@gmail.com)
+  __Unit Test__: Ensure that the number of orders displayed matches the selected filter.
+  - Rationale: Checks that the filtering functionality works and the correct subset of orders is shown based on the active filter.
+
+### Switch Between Filters:
+
+  __Unit Test__: Check if the correct filter is active when switching between different order statuses.
+  - Rationale: Validates that the user can switch between filters seamlessly and the correct orders are displayed.
+
+### Dismiss Active Filter:
+
+  __Unit Test__: Check that the current filter is displayed at the top of the list, and clicking the "X" removes the selected filter.
+  - Rationale: Ensures that the filter dismissal functionality works, allowing the user to reset the filters and view all orders again.
