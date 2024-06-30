@@ -1,0 +1,44 @@
+.orderContainer {
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.orderBox {
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.orderDetails {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.orderDetails div {
+  flex: 1;
+  min-width: 120px;
+  margin-top: 10px;
+}
+
+@media (min-width: 600px) {
+  .orderContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .orderBox {
+    margin: 10px;
+  }
+}
+
+@media (min-width: 900px) {
+  .orderBox {
+    max-width: 300px;
+  }
+}
